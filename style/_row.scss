@@ -1,0 +1,54 @@
+.col-12 {
+  margin-top: $margin-medium;
+
+  .container {
+    .card {
+      text-align: center;
+      background-color: $bg-c0-snow;
+
+      img {
+        width: $width-medium;
+        margin: 0 auto;
+      }
+
+      margin: 0 auto;
+
+      .card-title.name {
+        @media only screen and (max-width: 768px) {}
+
+        font-size: $text-medium;
+      }
+
+      .card-text {
+        font-size: $text-small;
+        text-align: center;
+      }
+
+      .price {
+        color: $text-c0-red;
+        margin-bottom: $margin-small;
+      }
+
+      transition: all 1s;
+
+      &:hover {
+        box-shadow: -2px 9px 5px 0px rgba(0, 0, 0, 0.15);
+      }
+
+      .more-info {
+        @include button($padding-small,
+          100px,
+          10px,
+          $bg-c0-orange,
+          none,
+          $text-c0-light,
+          $text-smaller );
+
+        a {
+          text-decoration: none;
+          color: $text-c0-light;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+footer {
+  margin-top: 30px;
+  border: 1px solid black;
+}
+footer p {
+  margin-top: 30px;
+  text-align: center;
+}

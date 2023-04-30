@@ -1,0 +1,272 @@
+//@use '../scss/method';
+@import"./_global.scss";
+@import"./_footer.scss";
+
+//Bảng màu regiter.html
+
+//Background:
+$bg-0: black;
+$bg-1: white;
+$bg-3: rgb(201, 201, 201);
+$bg-4: rgb(225, 47, 225);
+$bg-5: red;
+
+//Color:
+$txt-1: black;
+$txt-2: rgb(201, 201, 201);
+$txt-3: red;
+$txt-4: rgb(13, 225, 20);
+$txt-5: whitesmoke;
+$txt-6: rgb(225, 47, 225);
+
+//Font size:
+$fs-1_6 : 16px;
+$fs-1: 10px;
+$fs-2: 20px;
+$fs-3: 30px;
+$fs-4: 40px;
+$fs-5: 50px;
+$fs-6: 60px;
+$fs-7: 70px;
+
+//Font weight:
+$fw-1: 100;
+$fw-2: 200;
+$fw-3: 300;
+$fw-4: 400;
+$fw-5: 500;
+$fw-6: 600;
+$fw-7: 700;
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+//Header 
+body {
+    height: 1000px;
+    background-color: $bg-c0-lava;
+}
+
+
+.register_header {
+    background-color: $bg-0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+
+        .logo {
+            width: 120px;
+            height: 33px;
+        }
+
+        .menu {
+
+            //margin-left: 200px;
+            .shop {
+                color: $txt-2;
+                font-size: $fs-2;
+            }
+
+            a {
+                position: relative;
+                display: inline-block;
+                color: $txt-5;
+                text-decoration: none;
+                //margin-left: 100px;
+                font-size: $fs-2;
+
+                &::after {
+                    position: absolute;
+                    width: 0%;
+                    height: 2px;
+                    content: '';
+                    bottom: -3px;
+                    left: 0;
+                    background-color: $bg-4;
+                    transform: scale(0);
+                }
+
+                &:hover {
+                    color: $txt-6;
+                    transition: all 0.5s;
+
+                    &::after {
+                        width: 100%;
+                        transform: scaleX(1);
+                        transition: 0.5s transform;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//Menu 
+.register_menu {
+    background-color: $bg-1;
+
+    .container {
+        margin-left: 30px;
+
+        .home {
+            color: $txt-6;
+            font-weight: $fw-5;
+
+            &:hover {
+                color: $txt-3;
+                transition: all 1s;
+            }
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            font-size: $fs-2;
+            color: $txt-1;
+            padding: 0px 20px;
+            margin: 10px 0px;
+
+            &:hover {
+                color: $txt-6;
+                transition: all 0.5s linear;
+            }
+        }
+    }
+}
+
+//Register Form
+.register_form {
+    background-color: $bg-c0-lava;
+
+    h1 {
+        font-size: $fs-5;
+    }
+
+    .container {
+        .frm_register {
+            background-color: $bg-1;
+            border: none;
+
+            .register__form {
+                .form__input {
+                    .component__input {
+                        input {
+                            font-size: $fs-3;
+                            color: $txt-1;
+                        }
+
+                        .text_effect {
+                            position: relative;
+                            font-family: sans-serif;
+                            text-transform: uppercase;
+                            font-size: $fs-3;
+                            letter-spacing: 4px;
+                            overflow: hidden;
+                            background: linear-gradient(60deg, $bg-0, $bg-1, $bg-0);
+                            background-repeat: no-repeat;
+                            background-size: 80%;
+                            animation: animate 3s linear infinite;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: rgba(255, 255, 255, 0);
+                            animation: text_effect linear infinite 10s;
+                        }
+
+                        .gender {
+                            &:hover {
+                                color: $txt-6;
+                                transition: all 1s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .coolBeans {
+        border: 2px solid $bg-5;
+        border-radius: 30px;
+        width: 200px;
+        height: 60px;
+        color: $bg-5;
+        font-family: roboto;
+        font-size: $fs-3;
+        font-weight: $fw-4;
+        overflow: hidden;
+        position: relative;
+        text-decoration: none;
+        transition: .2s transform ease-in-out;
+        will-change: transform;
+        z-index: 0;
+        background-color: $bg-1;
+
+        &::after {
+            background-color: $bg-4;
+            border-radius: 0.5rem;
+            content: '';
+            display: block;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translate(-100%, 0) rotate(10deg);
+            transform-origin: top left;
+            transition: .3s transform ease-out;
+            will-change: transform;
+            z-index: -1;
+        }
+
+        &:hover::after {
+            transform: translate(0, 0);
+        }
+
+        &:hover {
+            border: 2px solid transparent;
+            color: $txt-5;
+            transform: scale(1);
+            will-change: transform;
+        }
+    }
+}
+
+
+//Animation 
+//1. Animate effect text
+@keyframes text_effect {
+    0% {
+        background-position: -500%;
+    }
+
+    100% {
+        background-position: 500%;
+    }
+}
+
+//Footer 
+.register_footer {
+    .container {
+        .footer_register_info {
+            .footer_register_title {
+                font-size: $fs-3;
+            }
+
+            p {
+                font-size: $fs-2;
+                text-align: left !important;
+            }
+
+            .register_more_info {
+                font-size: $fs-2;
+            }
+        }
+    }
+}

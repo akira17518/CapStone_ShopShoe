@@ -1,0 +1,72 @@
+* {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 15px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// Background black
+$bg-c0-dark: #000;
+$bg-c0-orange: orange;
+$bg-c0-light: #fff;
+$bg-c0-red: #ae0923;
+$bg-c0-blackpink: #FF99FF;
+$bg-c0-ocean: #3399FF;
+$bg-c0-snow: #FFFAFA;
+$bg-c0-lava: #E6E6FA;
+$bg-c0-yelow: rgb(236, 219, 128);
+$bg-c0-gradient: indigo;
+
+
+
+// Text color
+$text-c0-light: #fff;
+$text-c0-dark: #000;
+$text-c0-red: red;
+$text-c0-green: rgb(46, 143, 130);;
+// Font size
+$text-smaller: 13px;
+$text-small: 16px;
+$text-medium: 20px;
+$text-big: 40px;
+$text-xl: 50px;
+$text-2xl: 60px;
+// padding
+$padding-small: 10px;
+$padding-medium: 15px;
+$padding-big: 20px;
+$padding-xl: 30px;
+$padding-2xl: 35px;
+// margin
+$margin-small: 10px;
+$margin-medium: 15px;
+$margin-big: 20px;
+$margin-xl: 30px;
+$margin-2xl: 35px;
+// Width
+$width-small: 25%;
+$width-medium: 50%;
+$width-big: 75%;
+$width-full: 100%;
+
+// button
+
+@mixin button($pad, $width, $br, $bg-color, $border, $color, $fs) {
+  padding: $pad;
+  width: $width;
+  border-radius: $br;
+  background-color: $bg-color;
+  border: $border;
+  color: $color;
+  font-size: $fs;
+}

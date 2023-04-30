@@ -1,0 +1,191 @@
+@import "./_global.scss";
+@import "./_header.scss";
+
+@import "./_carousel.scss";
+@import "./_footer.scss";
+
+
+body{
+  background-color: $bg-c0-lava;
+}
+.carousel-slider {
+  .lading-swiper {
+    position: relative;
+
+    .item {
+      height: 500px;
+      background-image: url(../images/image\ 6.png);
+      background-position: center center;
+      background-size: cover;
+
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .product_img {
+          width: $width-medium;
+
+          img {
+            width: $width-big;
+            animation: float 6s ease-in-out infinite;
+          }
+        }
+
+        .product_detail {
+          width: $width-medium;
+          text-align: center;
+
+          button {
+            @include button($padding-medium,
+              150px,
+              10px,
+              $bg-c0-orange,
+              none,
+              $text-c0-light,
+              $text-small );
+            transition: all 1s;
+
+            &:hover {
+              opacity: 0.5;
+            }
+
+            a {
+              text-decoration: none;
+              color: $text-c0-light;
+            }
+          }
+        }
+      }
+    }
+
+    .owl-dots {
+      position: absolute;
+      bottom: 0%;
+      left: 46%;
+
+      .owl-dot.active {
+        span {
+          background-color: $bg-c0-dark !important;
+        }
+      }
+    }
+
+    .owl-nav {
+      position: absolute;
+      top: 40%;
+      width: 100%;
+
+      button.owl-next {
+        border: 1px solid none;
+        width: 100px;
+        height: 100px;
+
+        &:hover {
+          background: none;
+        }
+
+        position: absolute;
+        right: 0%;
+        font-size: $text-2xl;
+
+        &:hover span {
+          transform: scale(1.5);
+          color: black;
+        }
+
+        span {
+          transition: all 0.5s;
+          display: inline-block;
+        }
+      }
+
+      button.owl-prev {
+        width: 100px;
+        height: 100px;
+
+        &:hover {
+          background: none;
+        }
+
+        position: absolute;
+        left: 0%;
+        font-size: $text-2xl;
+
+        &:hover span {
+          transform: scale(1.5);
+          color: black;
+        }
+
+        span {
+          transition: all 0.5s;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.product {
+  background-color: $bg-c0-lava;
+  .container {
+    .tittle {
+      font-size: $text-big;
+      width: $width-medium;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .product-row {
+      .adidas-cate {
+        border: 1px solid none;
+        padding: $padding-medium;
+        background-color: $bg-c0-yelow;
+        color: $text-c0-light;
+        font-size: $text-medium;
+      }
+
+      .nike-cate {
+        border: 1px solid none;
+        padding: $padding-medium;
+        background-color: $bg-c0-ocean;
+        color: $text-c0-light;
+        font-size: $text-medium;
+      }
+
+      .vans-cate {
+        border: 1px solid none;
+        padding: $padding-medium;
+        background-color: $bg-c0-red;
+        color: $text-c0-light;
+        font-size: $text-medium;
+      }
+
+      .adidas-row {
+        @import "./row";
+      }
+
+      .nike-row {
+        @import "./row";
+      }
+
+      .vans-row {
+        @import "./row";
+      }
+    }
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+
+  50% {
+    transform: translatey(-50px);
+  }
+
+  100% {
+    transform: translatey(0px);
+  }
+}
